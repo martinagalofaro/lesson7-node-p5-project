@@ -5,7 +5,8 @@ var express = require("express");  //load express module inside this variable
 var app = express(); // the var became a function sice we're loading the module in it
 
 //chose a port to comunicate bw server and client
-var port = 3000;
+//var port = 3000; port for local host
+var port = process.env.PORT || 3000; //now it will work both locally and on server
 
 //tell node to privide public access to the folder 'public'
 app.use(express.static('public'));
